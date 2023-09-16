@@ -13,4 +13,16 @@ export const stage1Router = createTRPCRouter({
     });
     return users;
   }),
+  stage2GetFailed: publicProcedure.query(async ({ ctx }) => {
+    const users = await ctx.prisma.stage2UserFailed.findMany({
+      select: { username: true, grade: true },
+    });
+    return users;
+  }),
+  stage2GetPassed: publicProcedure.query(async ({ ctx }) => {
+    const users = await ctx.prisma.stage2User.findMany({
+      select: { username: true, grade: true },
+    });
+    return users;
+  }),
 });

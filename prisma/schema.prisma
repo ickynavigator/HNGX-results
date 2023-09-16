@@ -10,13 +10,6 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Stage1Pending {
-    username   String
-    hostedLink String
-    email      String   @id @unique
-    updatedAt  DateTime @default(now()) @updatedAt
-}
-
 model Stage1User {
     username   String   @id @unique
     hostedLink String
@@ -31,4 +24,21 @@ model Stage1UserFailed {
     email      String   @unique
     grade      Int      @default(0)
     updatedAt  DateTime @default(now()) @updatedAt
+}
+
+model Stage2User {
+    username   String
+    hostedLink String
+    email      String   @unique
+    grade      Int      @default(0)
+    updatedAt  DateTime @default(now())
+    promoted   Boolean  @default(false)
+}
+
+model Stage2UserFailed {
+    username   String
+    hostedLink String
+    email      String   @unique
+    grade      Int      @default(0)
+    updatedAt  DateTime @default(now())
 }

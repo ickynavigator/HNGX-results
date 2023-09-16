@@ -6,7 +6,7 @@ import {
   rem,
   type NavbarProps,
 } from '@mantine/core';
-import { IconNumber1 } from '@tabler/icons-react';
+import { IconNumber1, IconNumber2 } from '@tabler/icons-react';
 import { LinksGroup, type LinksGroupProps } from './LinksGroup';
 
 const useStyles = createStyles(theme => ({
@@ -42,7 +42,10 @@ const pageGenerate = (
   ];
 };
 
-const data: LinksGroupProps[] = [...pageGenerate('1', IconNumber1)];
+const data: LinksGroupProps[] = [
+  ...pageGenerate('1', IconNumber1),
+  ...pageGenerate('2', IconNumber2, true),
+];
 
 const CustomNavbar = (props: Omit<NavbarProps, 'children'>) => {
   const { classes } = useStyles();

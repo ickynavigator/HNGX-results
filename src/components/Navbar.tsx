@@ -36,7 +36,7 @@ const pageGenerate = (
       initiallyOpened: opened,
       links: [
         { link: `stage${page}/failed`, label: `Stage ${page} Failed` },
-        { link: `stage${page}/results`, label: `Stage ${page} Results` },
+        { link: `stage${page}/passed`, label: `Stage ${page} Passed` },
       ],
     },
   ];
